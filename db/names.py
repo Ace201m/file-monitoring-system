@@ -1,0 +1,6 @@
+class Names:
+    DBNAME = 'ASE_PROJ'
+    SERVER_CONNECT = 'mongodb://localhost:27017/'
+
+    DB_SIGN_COLLECTION = 'SIGNATURES'
+    DB_CONFIG_COLLECTION = 'CONFIG'
