@@ -1,0 +1,45 @@
+Basic Tripwire model:
+    1. Update model working path (current : ~)
+    2. Start service
+    3. Stop Service
+    4. Generate Report
+    5. Exit
+Select option (1/2/3/4) :
+
+1. Update model working path
+Enter new working path :
+Do you want to save previous monitoring (y/n) :
+(this will be saved as mongodb dump)
+https://stackoverflow.com/questions/28504832/dump-and-restore-mongo-db-with-python
+
+2. start service
+3. stop service
+https://stackoverflow.com/questions/16420092/how-to-make-python-script-run-as-service
+
+4. Generate Report -- as txt files in report folder with timestamp of report generation appended
+5. Exit
+
+
+Monitoring Events:-
+0. Basic rule
+    -- validate the action before taking actions
+    -- record the all valid and invalid actions (undo the invalid actions)
+    https://blog.magrathealabs.com/filesystem-events-monitoring-with-python-9f5329b651c3
+1. Adding/Deleting a new file
+    -- This is fine until the added file is added by user not having permission
+        work around - get perm of created file and get created by, if
+        the user matches with parent dir user then fine
+    -- validate the action before taking actions
+    -- record the all valid and invalid actions
+2. Modifying a file
+    -- Will add this to action list for each file in database
+    -- invalid actions can be obtained by the action list (checking the valid flag in each action for a file)
+
+
+Data for each file or empty directory:
+    -- id : path
+    -- signatures
+    -- flag_list
+    -- action_list
+    -- owner user
+    -- parent's owner
