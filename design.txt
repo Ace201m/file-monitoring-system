@@ -14,7 +14,7 @@ https://stackoverflow.com/questions/28504832/dump-and-restore-mongo-db-with-pyth
 
 2. start service
 3. stop service
-https://stackoverflow.com/questions/16420092/how-to-make-python-script-run-as-service
+https://blog.magrathealabs.com/filesystem-events-monitoring-with-python-9f5329b651c3
 
 4. Generate Report -- as txt files in report folder with timestamp of report generation appended
 5. Exit
@@ -23,8 +23,7 @@ https://stackoverflow.com/questions/16420092/how-to-make-python-script-run-as-se
 Monitoring Events:-
 0. Basic rule
     -- validate the action before taking actions
-    -- record the all valid and invalid actions (undo the invalid actions)
-    https://blog.magrathealabs.com/filesystem-events-monitoring-with-python-9f5329b651c3
+    -- record the all valid and invalid actions (undo the invalid actions, Not sure about this though)
 1. Adding/Deleting a new file
     -- This is fine until the added file is added by user not having permission
         work around - get perm of created file and get created by, if
