@@ -38,7 +38,7 @@ Monitoring Events:-
 Data for each file or directory:
     -- id : path
     -- signatures
-    -- flag_list
+    -- corresponding config
     -- action_list
     -- owner user
     -- parent's owner
@@ -52,7 +52,6 @@ actions
 
 Configs
     -- flag
-    -- path
 
 flag_list = [read_only, fullScan, nonScan, system_file, executable, hidden_files]
 system_file - nothing can be done

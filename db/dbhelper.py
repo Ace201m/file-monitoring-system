@@ -9,11 +9,10 @@ class Database:
         db = myClient[Names.DBNAME]
 
         self.col = dict()
-        self.col[Names.DB_SIGN_COLLECTION] = db[Names.DB_SIGN_COLLECTION]
-        self.col[Names.DB_SIGN_COLLECTION] = db[Names.DB_CONFIG_COLLECTION]
+        self.col[Names.DB_DATA_COLLECTION] = db[Names.DB_DATA_COLLECTION]
+        self.col[Names.DB_ACTION_COLLECTION] = db[Names.DB_ACTION_COLLECTION]
 
-    def insert(self, collection, path, data):
-        data['_id'] = path
+    def insert(self, collection, data):
         verdict = self.col[collection].insert_one(data)
         if not verdict.acknowledged:
             raise Exception('data not inserted')
