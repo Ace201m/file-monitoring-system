@@ -8,11 +8,12 @@ def main():
         option = input("""
         
 Basic Tripwire model:
-    1. Setting up the System
-    2. Updating file
-    3. Generate Report
-    4. Exit
-Select option (1/2/3/4) : """)
+    1. Update model working path (current : ~)
+    2. Start service
+    3. Stop Service
+    4. Generate Report
+    5. Exit
+Select option (1/2/3/4/5) : """)
         if option == '1':
             path = prompt()
             system = Tripwire(path)
