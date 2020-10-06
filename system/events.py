@@ -6,6 +6,7 @@ from db.action import Action
 from db.data import Data
 from db.dbhelper import Database
 from db.names import Names
+from system.validator import validate
 
 
 class FileEventHandler(FileSystemEventHandler):
@@ -19,7 +20,8 @@ class FileEventHandler(FileSystemEventHandler):
             Names.DB_ACTION_COLLECTION_BY: new_file.getUser(),
             Names.DB_ACTION_COLLECTION_PATH: new_file.getPath(),
             Names.DB_ACTION_COLLECTION_TYPE: 'CREATED',
-            Names.DB_ACTION_COLLECTION_TIME: datetime.now().ctime()
+            Names.DB_ACTION_COLLECTION_TIME: datetime.now().ctime(),
+            Names.DB_ACTION_COLLECTION_ISVALID: validate(new_file, 'CREATED')
         })
         database = Database()
         database.insert(Names.DB_DATA_COLLECTION, new_file.getData())
