@@ -35,7 +35,7 @@ Monitoring Events:-
     -- invalid actions can be obtained by the action list (checking the valid flag in each action for a file)
 
 
-Data for each file or empty directory:
+Data for each file or directory:
     -- id : path
     -- signatures
     -- flag_list
@@ -49,6 +49,10 @@ actions
  -- time
  -- valid_flag
  -- file_path : _id
+
+Configs
+    -- flag
+    -- path
 
 flag_list = [read_only, fullScan, nonScan, system_file, executable, hidden_files]
 system_file - nothing can be done
