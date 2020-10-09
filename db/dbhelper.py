@@ -23,3 +23,6 @@ class Database:
 
     def delete(self, collection, path):
         self.col[collection].delete_one({'_id': path})
+
+    def get(self, collection, path):
+        return self.col[collection].find_one({Names.DB_DATA_COLLECTION_PATH: path})
