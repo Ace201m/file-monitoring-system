@@ -1,7 +1,10 @@
+from pathlib import Path
+
 from db.dbhelper import Database
 from db.names import Names
 import os
-from pathlib import Path
+
+from signature.base import BaseSignature
 
 
 def prompt():
@@ -27,8 +30,9 @@ class Data:
             self.data = dict()
             filepath = os.path.abspath(event.src_path)
             fileInfo = Path(filepath)
+            file_hash = BaseSignature(filepath)
             self.data[Names.DB_DATA_COLLECTION_PATH] = filepath
-            self.data[Names.DB_DATA_COLLECTION_SIGN] = 'SIGN'
+            self.data[Names.DB_DATA_COLLECTION_SIGN] = file_hash.getSignature() if os.path.exists(filepath) else 'EMPTY'
 
             self.data[Names.DB_DATA_COLLECTION_CONFIG] = prompt() if data_id == -1 else 'EMPTY'
             self.data[Names.DB_DATA_COLLECTION_TYPE] = 'DIR' if event.is_directory else 'FILE'
@@ -46,3 +50,6 @@ class Data:
 
     def getData(self):
         return self.data
+
+    def setData(self, data):
+        self.data = data
