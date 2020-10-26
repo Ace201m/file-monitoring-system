@@ -1,4 +1,4 @@
-import hashlib
+from signature import crc32, alder32
 
 
 class BaseSignature:
@@ -7,7 +7,7 @@ class BaseSignature:
         self.hash = 'EMPTY'
 
     def getSignature(self):
-        with open(self.file_path, 'rb') as f:
-            byte = f.read()
-            self.hash = hashlib.sha512(byte).hexdigest()
+        alderCheckSum = alder32.alderCheckSum(self.file_path)
+        crcCheckSum = crc32.crc32CheckSum(self.file_path)
+        self.hash = alderCheckSum+'#'+crcCheckSum
         return self.hash
