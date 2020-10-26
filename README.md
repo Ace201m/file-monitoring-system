@@ -1,4 +1,4 @@
-# Unix Based File Monitoring System
+# File Monitoring System for Unix Based Systems
 
 This system simply monitors the files or directories from the base directories
 you set and then records all the operations like file creation, deletion and modification and 
