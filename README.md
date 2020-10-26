@@ -25,7 +25,9 @@ Options are very obvious to use.
 We have used **alder32** and **crc32** concatinated to get the final checksum or signature
 for a file. We chose these two because we want he signature 
 function to be light weight and also strong enough
-for our need.
+for our need. The hash function formed is now a 64 bit hash probability of getting 
+collision for having 10000 hashes in the database the chances of 
+collision is 2.710234×10<sup>-12</sup>. ([source](http://davidjohnstone.net/pages/hash-collision-probability))
 
 ## Report Generation 
 The report we generate is appended to the `report.txt` present at the 
