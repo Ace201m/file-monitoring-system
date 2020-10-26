@@ -12,6 +12,7 @@ class Event:
 
     def run(self):
         self.start()
+        print("Service is started (press Ctrl-C to stop)")
         try:
             while True:
                 time.sleep(1)

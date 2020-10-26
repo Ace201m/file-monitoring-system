@@ -26,3 +26,6 @@ class Database:
 
     def get(self, collection, path):
         return self.col[collection].find_one({Names.DB_DATA_COLLECTION_PATH: path})
+
+    def getAll(self, collection):
+        return self.col[collection].find({})
