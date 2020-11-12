@@ -5,6 +5,7 @@ from db.names import Names
 import os
 
 from signature.base import BaseSignature
+from db.secureDB import admin
 
 
 def prompt():
@@ -25,6 +26,7 @@ Select your option : """)
 
 
 class Data:
+
     def __init__(self, data_id=-1, event=None):
         if data_id == -1 or data_id == 0:
             self.data = dict()
@@ -55,7 +57,7 @@ class Data:
     def getData(self):
         columns = Names.DB_DATA_FIELDS
         data_list = []
-        for col in columns:
+        for col in range(len(columns)):
             data_list.append(self.data[col])
         return data_list
 

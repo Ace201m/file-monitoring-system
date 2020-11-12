@@ -25,7 +25,7 @@ def getReport(db):
         f.write("Report generated on {}\n".format(datetime.datetime.now().ctime()))
         actions = db.getAll(Names.DB_ACTION_COLLECTION)
         for action in actions:
-            if not action[Names.DB_ACTION_COLLECTION_ISVALID]:
+            if action[Names.DB_ACTION_COLLECTION_ISVALID] == 'False':
                 writeAction(f, Action(action_data=action).getData())
 
         f.write('\n' + '-' * 40 + '\n')

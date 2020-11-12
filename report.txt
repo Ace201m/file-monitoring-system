@@ -1,14 +1,14 @@
 ----------------------------------------
-Report generated on Mon Oct 26 17:30:22 2020
+Report generated on Thu Nov 12 18:32:35 2020
 
 	 Action Type : MODIFIED
-	 Time : Mon Oct 26 13:47:32 2020
-	 Concerned File : /home/ace201m/Study/ASE/semesterLong/project/demo_dir/file.txt1
+	 Time : Thu Nov 12 18:30:05 2020
+	 Concerned File : /home/ace201m/Study/ASE/semesterLong/project/demo_dir/1
 	 User Responsible : ace201m
 
 	 Action Type : MODIFIED
-	 Time : Mon Oct 26 13:47:32 2020
-	 Concerned File : /home/ace201m/Study/ASE/semesterLong/project/demo_dir/file.txt1
+	 Time : Thu Nov 12 18:30:05 2020
+	 Concerned File : /home/ace201m/Study/ASE/semesterLong/project/demo_dir/1
 	 User Responsible : ace201m
 
 ----------------------------------------

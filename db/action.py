@@ -1,5 +1,6 @@
 from db.dbhelper import Database
 from db.names import Names
+from db.secureDB import admin
 
 
 class Action:
@@ -18,6 +19,6 @@ class Action:
     def getData(self):
         columns = Names.DB_ACTION_FIELDS
         data_list = []
-        for col in columns:
+        for col in range(len(columns)):
             data_list.append(self.data[col])
         return data_list

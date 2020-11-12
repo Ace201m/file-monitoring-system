@@ -12,7 +12,7 @@ from system.validator import validate
 
 def pass_props(old, new):
     ret = new.copy()
-    for props in old:
+    for props in range(len(old)):
         if ret[props] == 'EMPTY':
             ret[props] = old[props]
     return ret

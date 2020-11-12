@@ -36,4 +36,4 @@ class Event:
 
 
 if __name__ == "__main__":
-    Event('../demo_dir/').run()
+    Event('../demo_dir/').start()

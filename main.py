@@ -1,3 +1,4 @@
+from os import name, system
 from time import sleep
 
 from db.dbhelper import Database
@@ -6,12 +7,21 @@ from system.eventHandler import Event
 from system.report import getReport
 
 
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
+
+
 def main():
     db = Database()
     dir_path = getPath()
     while True:
+        clear()
         option = input("""
-        
 File Monitoring System:
     1. Update model working path (current : {})
     2. Start service
@@ -25,17 +35,13 @@ Select option (1/2/3/4/5) : """.format(dir_path))
             Event(dir_path).run()
         elif option == '3':
             getReport(db)
-            print()
-            print("Waiting for 10 secs", end='')
-            for _ in range(10):
-                sleep(1)
-                print('.', end='')
-            print()
+            print('Report is added to the report.txt file present in the project root')
+            sleep(3)
         elif option == '4':
             break
         else:
-            print("Unknown action ... Exiting... ")
-            break
+            print("Unknown action ... Try Again... ")
+            sleep(2)
 
 
 if __name__ == '__main__':

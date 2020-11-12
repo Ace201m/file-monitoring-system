@@ -2,3 +2,4 @@
 /demo_dir/
 !/report.txt
 */__pycache__
+/DBFiles/*
