@@ -12,7 +12,7 @@ def main():
     while True:
         option = input("""
         
-Basic Tripwire model:
+File Monitoring System:
     1. Update model working path (current : {})
     2. Start service
     3. Generate Report

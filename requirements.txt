@@ -1,3 +1,5 @@
-pathtools==0.1.2
-pymongo==3.11.0
-watchdog==0.10.3
+pathtools>=0.1.2
+pymongo>=3.11.0
+watchdog>=0.10.3
+ptracer>=0.5
+pyinotify

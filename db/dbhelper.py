@@ -5,7 +5,13 @@ from .names import Names
 class Database:
 
     def __init__(self):
-        myClient = pymongo.MongoClient(Names.SERVER_CONNECT)
+        try:
+            myClient = pymongo.MongoClient(Names.SERVER_CONNECT, serverSelectionTimeoutMS=100)
+            myClient.server_info()
+        except pymongo.errors.ServerSelectionTimeoutError as err:
+            print("Your MongoDB is not running or not properly installed.")
+            print("Start the service by 'sudo systemctl start mongod'")
+            exit(1)
         db = myClient[Names.DBNAME]
 
         self.col = dict()
