@@ -30,6 +30,7 @@ class AESCipher(object):
         return s[:-ord(s[len(s)-1:])]
 
 
+# this is the secret key for the project
 admin = AESCipher('_ase_project_key')
 
 
