@@ -1,6 +1,7 @@
+from db.names import Names
 from os import path
 
-pathFile = 'db/path.txt'
+pathFile = Names.PATHFILE
 
 
 def updatePath(dir_path):

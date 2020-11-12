@@ -31,7 +31,8 @@ class FileEventHandler(FileSystemEventHandler):
             Names.DB_ACTION_COLLECTION_PATH: new_file.getPath(),
             Names.DB_ACTION_COLLECTION_TYPE: 'CREATED',
             Names.DB_ACTION_COLLECTION_TIME: datetime.now().ctime(),
-            Names.DB_ACTION_COLLECTION_ISVALID: validate(new_file.getData(), new_file.getData(), 'CREATED')
+            Names.DB_ACTION_COLLECTION_ISVALID: validate(
+                new_file.getData(), new_file.getData(), 'CREATED')
         })
         database = Database()
         database.insert(Names.DB_DATA_COLLECTION, new_file.getData())
@@ -52,7 +53,8 @@ class FileEventHandler(FileSystemEventHandler):
             Names.DB_ACTION_COLLECTION_PATH: old_file.getPath(),
             Names.DB_ACTION_COLLECTION_TYPE: 'DELETED',
             Names.DB_ACTION_COLLECTION_TIME: datetime.now().ctime(),
-            Names.DB_ACTION_COLLECTION_ISVALID: validate(old_file.getData(), new_file.getData(), 'DELETED')
+            Names.DB_ACTION_COLLECTION_ISVALID: validate(
+                old_file.getData(), new_file.getData(), 'DELETED')
         })
         database = Database()
         database.delete(Names.DB_DATA_COLLECTION, old_file.getPath())
@@ -69,19 +71,20 @@ class FileEventHandler(FileSystemEventHandler):
             old_file = Data(data_id=filepath)
             if old_file.getData() is not None:
                 new_file = Data(event=event, data_id=0)
-                new_file_data = pass_props(old_file.getData(), new_file.getData())
+                new_file_data = pass_props(
+                    old_file.getData(), new_file.getData())
                 new_file.setData(new_file_data)
                 mod_action = Action(action_data={
                     Names.DB_ACTION_COLLECTION_BY: old_file.getUser(),
                     Names.DB_ACTION_COLLECTION_PATH: old_file.getPath(),
                     Names.DB_ACTION_COLLECTION_TYPE: 'MODIFIED',
                     Names.DB_ACTION_COLLECTION_TIME: datetime.now().ctime(),
-                    Names.DB_ACTION_COLLECTION_ISVALID: validate(old_file.getData(), new_file.getData(), 'MODIFIED')
+                    Names.DB_ACTION_COLLECTION_ISVALID: validate(
+                        old_file.getData(), new_file.getData(), 'MODIFIED')
                 })
                 database = Database()
-                database.insert(Names.DB_ACTION_COLLECTION, mod_action.getData())
+                database.insert(Names.DB_ACTION_COLLECTION,
+                                mod_action.getData())
                 if not mod_action.getData()[Names.DB_ACTION_COLLECTION_ISVALID]:
                     pass  # TODO undo action pending
                 print("FILE IS CHANGED")
-
-
