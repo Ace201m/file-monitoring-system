@@ -1,3 +1,4 @@
+import os
 from os import name, system
 from time import sleep
 
@@ -17,6 +18,11 @@ def clear():
 
 
 def main():
+
+    if os.geteuid() != 0:
+        exit("""You need to have root privileges to run this project.
+Please try again, this time using 'sudo' or use admin cmd in windows. Exiting.""")
+
     db = Database()
     dir_path = getPath()
     while True:
