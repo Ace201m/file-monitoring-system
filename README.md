@@ -23,7 +23,7 @@ Options are very obvious to use.
 
 ## Signatures used 
 We have used **alder32** and **crc32** concatinated to get the final checksum or signature
-for a file. We chose these two because we want he signature 
+for a file. We chose these two because we want the signature 
 function to be light weight and also strong enough
 for our need. The hash function formed is now a 64 bit hash probability of getting 
 collision for having 10000 hashes in the database the chances of 
